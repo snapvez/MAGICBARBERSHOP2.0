@@ -1,0 +1,49 @@
+{
+  "name": "Magic Barber",
+  "short_name": "MagicBarber",
+  "description": "Sistema de agendamento profissional para barbearia",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#D4AF37",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/Captura de ecrã 2025-10-29 145401.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/Captura de ecrã 2025-10-29 145401.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Agendamentos de Hoje",
+      "short_name": "Agendamentos",
+      "description": "Ver agendamentos do dia",
+      "url": "/admin?view=calendar",
+      "icons": [
+        {
+          "src": "/Captura de ecrã 2025-10-29 145401.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Painel Admin",
+      "short_name": "Admin",
+      "description": "Acesso rápido ao painel de administração",
+      "url": "/admin",
+      "icons": [
+        {
+          "src": "/Captura de ecrã 2025-10-29 145401.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
