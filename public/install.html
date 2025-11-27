@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#D4AF37">
+  <title>Instalar Magic Barber App</title>
+  <link rel="icon" type="image/png" href="/Captura de ecrã 2025-10-29 145401.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      color: #D4AF37;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      background: rgba(26, 26, 26, 0.9);
+      border: 2px solid #D4AF37;
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 3px solid #D4AF37;
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #D4AF37;
+      text-shadow: 0 2px 10px rgba(212, 175, 55, 0.5);
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #FFD700;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .instructions {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 25px 0;
+      text-align: left;
+    }
+
+    .instructions h2 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #FFD700;
+      text-align: center;
+    }
+
+    .step {
+      display: flex;
+      align-items: start;
+      margin: 15px 0;
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .step-number {
+      background: #D4AF37;
+      color: #000;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-right: 12px;
+      flex-shrink: 0;
+      font-size: 14px;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+      color: #000;
+      border: none;
+      padding: 18px 40px;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 100%;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.6);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .icon {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .device-info {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(212, 175, 55, 0.05);
+      border-radius: 10px;
+      font-size: 12px;
+      color: #FFD700;
+    }
+
+    .share-icon {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: #D4AF37;
+      color: #000;
+      border-radius: 4px;
+      text-align: center;
+      line-height: 20px;
+      font-weight: bold;
+      margin: 0 3px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .btn {
+        padding: 15px 30px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="/Captura de ecrã 2025-10-29 145401.png" alt="Magic Barber Logo">
+    </div>
+
+    <h1>MAGIC BARBERSHOP</h1>
+    <p class="subtitle">Na Régua Como Deve Ser</p>
+
+    <div class="icon">📱</div>
+
+    <div id="content"></div>
+  </div>
+
+  <script>
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const isAndroid = /Android/.test(navigator.userAgent);
+    const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    const isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+
+    const content = document.getElementById('content');
+    const appUrl = window.location.origin;
+
+    if (isIOS) {
+      content.innerHTML = `
+        <div class="instructions">
+          <h2>🍎 Instalar no iPhone/iPad</h2>
+          <div class="step">
+            <div class="step-number">1</div>
+            <div>Clica no botão "Abrir App" abaixo</div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div>No Safari, clica no botão Partilhar <span class="share-icon">⬆️</span> (no fundo do ecrã)</div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div>Desliza e escolhe "Adicionar ao Ecrã Principal"</div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div>Clica em "Adicionar" - pronto! ✨</div>
+          </div>
+        </div>
+        <a href="${appUrl}" class="btn">🚀 Abrir App</a>
+        <div class="device-info">
+          📱 iOS detectado - Usa o Safari para melhor experiência
+        </div>
+      `;
+    } else if (isAndroid) {
+      content.innerHTML = `
+        <div class="instructions">
+          <h2>🤖 Instalar no Android</h2>
+          <div class="step">
+            <div class="step-number">1</div>
+            <div>Clica no botão "Abrir App" abaixo</div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div>Clica no menu <strong>⋮</strong> (três pontos) no canto superior</div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div>Escolhe "Instalar aplicação" ou "Adicionar ao ecrã principal"</div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div>Clica em "Instalar" - pronto! ✨</div>
+          </div>
+        </div>
+        <a href="${appUrl}" class="btn" id="installBtn">🚀 Abrir App</a>
+        <div class="device-info">
+          📱 Android detectado - Chrome recomendado
+        </div>
+      `;
+
+      let deferredPrompt;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+
+        const installBtn = document.getElementById('installBtn');
+        installBtn.addEventListener('click', async (e) => {
+          if (deferredPrompt) {
+            e.preventDefault();
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            console.log(`User response: ${outcome}`);
+            deferredPrompt = null;
+          }
+        });
+      });
+    } else {
+      content.innerHTML = `
+        <div class="instructions">
+          <h2>💻 Instalar no Computador</h2>
+          <div class="step">
+            <div class="step-number">1</div>
+            <div>Clica no botão "Abrir App" abaixo</div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div>Procura o ícone <strong>⊕</strong> ou <strong>🖥️</strong> na barra de endereços</div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div>Clica em "Instalar Magic Barber"</div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div>A app abre numa janela própria - pronto! ✨</div>
+          </div>
+        </div>
+        <a href="${appUrl}" class="btn">🚀 Abrir App</a>
+        <div class="device-info">
+          💻 Desktop detectado - Chrome ou Edge recomendado
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
